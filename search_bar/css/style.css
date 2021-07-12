@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #2bcbba;
+  font-family: "Poppins", sans-serif;
+}
+.search-bx {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 100px;
+}
+
+.search-bx .search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: #000;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2ps 6px 2px;
+  cursor: pointer;
+}
+.search-bx .search::before {
+  content: "";
+  background: #fff;
+  position: absolute;
+  margin: auto;
+  top: 20px;
+  right: -10px;
+  bottom: 0;
+  left: 0;
+  width: 12px;
+  height: 2px;
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+.search-bx .search::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: all 0.5s;
+}
+
+.search-bx input {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: #fff;
+  color: rgba(26, 24, 24);
+  padding: 0 80px 0 20px;
+  border-radius: 50px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+.search-bx input:hover {
+  cursor: pointer;
+}
+.search-bx input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+.search-bx input:focus ~ .search {
+  right: -250px;
+  background: #151515;
+  z-index: 6;
+}
+
+.search-bx input:focus ~ .search::before {
+  top: 0;
+  left: -10px;
+  width: 18px;
+}
+.search-bx input:focus ~ .search::after {
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  border: none;
+  background: #fff;
+  border-radius: 0;
+  transform: rotate(-45deg);
+}
+.search-bx input::placeholder {
+  color: #000;
+  opacity: 0.5;
+  font-weight: bolder;
+}
